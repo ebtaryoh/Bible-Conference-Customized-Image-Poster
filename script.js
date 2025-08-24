@@ -115,11 +115,11 @@ let nameColor = "green";
 // Function to get responsive font size
 function getResponsiveFont() {
   if (window.innerWidth < 500) {
-    return "bold 24px Arial"; // smaller font for phones
+    return "bold 32px Arial"; // smaller font for phones
   } else if (window.innerWidth < 900) {
-    return "bold 32px Arial"; // medium for tablets
+    return "bold 40px Arial"; // medium for tablets
   } else {
-    return "bold 40px Arial"; // full size for desktops
+    return "bold 44px Arial"; // full size for desktops
   }
 }
 
