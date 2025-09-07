@@ -83,11 +83,6 @@
 //   link.click();
 // });
 
-
-
-
-
-
 const canvas = document.getElementById("posterCanvas");
 const ctx = canvas.getContext("2d");
 const uploadImage = document.getElementById("uploadImage");
@@ -96,21 +91,21 @@ const downloadBtn = document.getElementById("downloadBtn");
 
 // Load base background poster (your uploaded PNG)
 const baseImage = new Image();
-baseImage.src = "Blue and Green Webinar Instagram Post.png"; // put in same folder
+baseImage.src = "singleshangout02.png";
 
-baseImage.onload = function() {
+baseImage.onload = function () {
   ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
 };
 
 // ===== Editable Settings =====
-let circleX = 220;       // center X of circle
-let circleY = 520;       // center Y of circle
-let circleRadius = 190;  // radius (380px diameter)
+let circleX = 364; // center X of circle
+let circleY = 484; // center Y of circle
+let circleRadius = 170; // radius (380px diameter)
 
 // Default text position
-let nameX = 95;
-let nameY = 230;
-let nameColor = "green";
+let nameX = 182;
+let nameY = 200;
+let nameColor = "orange";
 
 // Function to get responsive font size
 function getResponsiveFont() {
@@ -154,7 +149,6 @@ function updatePoster() {
     ctx.restore();
   }
 
-  // Draw name (responsive font)
   ctx.fillStyle = nameColor;
   ctx.font = getResponsiveFont();
   ctx.fillText(nameInput.value, nameX, nameY);
@@ -165,7 +159,7 @@ let uploadedImg = null;
 // Handle image upload
 uploadImage.addEventListener("change", (e) => {
   const reader = new FileReader();
-  reader.onload = function(event) {
+  reader.onload = function (event) {
     uploadedImg = new Image();
     uploadedImg.src = event.target.result;
     uploadedImg.onload = updatePoster;
